@@ -1,6 +1,9 @@
 from turtle import *
 from freegames import vector
 import math
+import turtle 
+
+flecha = turtle.Turtle()
 
 def line(start, end):
     "Draw line from start to end."
@@ -39,21 +42,31 @@ def circle(start, end):
 # Hacer el rectángulo
 def rectangle(start, end):
     "Draw rectangle from start to end."
-    up()
-    goto(start.x, start.y)
-    down()
-    begin_fill()
+    #up()
+    #goto(start.x, start.y)
+    #down()
+    #begin_fill()
 
-    for count in range(4):
-        forward(end.x - start.x)
-        left(90)
+    #for count in range(4):
+        #forward(end.x - start.x)
+        #left(90)
 
-    end_fill()
+    #end_fill()
     
 # Hacer el triángulo
 def triangle(start, end):
     "Draw triangle from start to end."
-    pass
+    #up()
+    #goto(start.x, start.y)
+    #down()
+    #begin_fill()
+
+    for count in range(3):
+        flecha.forward(100)
+        flecha.left(120)
+    triangle()
+
+    #end_fill()
     
 
 def tap(x, y):
