@@ -22,6 +22,7 @@ def square(start, end):
 
     end_fill()
 
+# Dibujar un círculo
 def circle(start, end):
     "Draw circle from start to end."
     up()
@@ -35,11 +36,21 @@ def circle(start, end):
 
     end_fill()
 
+# Hacer el rectángulo
 def rectangle(start, end):
     "Draw rectangle from start to end."
-    pass
-    
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
 
+    for count in range(4):
+        forward(end.x - start.x)
+        left(90)
+
+    end_fill()
+    
+# Hacer el triángulo
 def triangle(start, end):
     "Draw triangle from start to end."
     pass
@@ -71,6 +82,7 @@ onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
+# Color nuevo
 onkey(lambda: color('pink'), 'P')
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
