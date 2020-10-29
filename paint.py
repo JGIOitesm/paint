@@ -2,6 +2,7 @@ from turtle import *
 from freegames import vector
 import math
 
+# Función que permite hacer una línea.
 def line(start, end):
     "Draw line from start to end."
     up()
@@ -9,6 +10,7 @@ def line(start, end):
     down()
     goto(end.x, end.y)
 
+# Función que permite hacer un cuadrado.
 def square(start, end):
     "Draw square from start to end."
     up()
@@ -22,10 +24,21 @@ def square(start, end):
 
     end_fill()
 
+# Función que permite hacer el círculo.
 def circle(start, end):
     "Draw circle from start to end."
-    pass
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
 
+    for count in range(360):
+        forward(math.sin(math.radians(1))*(math.sqrt((end.x - start.x)**2+(end.y - start.y)**2)))
+        left(1)
+
+    end_fill()
+
+# Función que permite hacer el rectángulo.
 def rectangle(start, end):
     "Draw rectangle from start to end."
     up()
@@ -41,6 +54,7 @@ def rectangle(start, end):
 
     end_fill()
 
+# Función que permite hacer el triángulo.
 def triangle(start, end):
     "Draw triangle from start to end."
     up()
@@ -54,7 +68,6 @@ def triangle(start, end):
 
     end_fill()
     
-
 def tap(x, y):
     "Store starting point or draw shape."
     start = state['start']
@@ -81,6 +94,8 @@ onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
+# Color nuevo agregado.
+onkey(lambda: color('pink'), 'P')
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
