@@ -2,6 +2,7 @@ from turtle import *
 from freegames import vector
 import math
 
+# Función que permite hacer una línea.
 def line(start, end):
     "Draw line from start to end."
     up()
@@ -9,6 +10,7 @@ def line(start, end):
     down()
     goto(end.x, end.y)
 
+# Función que permite hacer un cuadrado.
 def square(start, end):
     "Draw square from start to end."
     up()
@@ -22,7 +24,7 @@ def square(start, end):
 
     end_fill()
 
-# Función para el círculo.
+# Función que permite hacer el círculo.
 def circle(start, end):
     "Draw circle from start to end."
     up()
@@ -36,6 +38,7 @@ def circle(start, end):
 
     end_fill()
 
+# Función que permite hacer el rectángulo.
 def rectangle(start, end):
     "Draw rectangle from start to end."
     up()
@@ -51,6 +54,7 @@ def rectangle(start, end):
 
     end_fill()
 
+# Función que permite hacer el triángulo.
 def triangle(start, end):
     "Draw triangle from start to end."
     up()
@@ -90,7 +94,7 @@ onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
-# Color nuevo
+# Color nuevo agregado.
 onkey(lambda: color('pink'), 'P')
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
