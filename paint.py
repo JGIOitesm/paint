@@ -2,16 +2,14 @@ from turtle import *
 from freegames import vector
 import math
 
-# Función que permite hacer una línea.
-def line(start, end):
+def line(start, end):  # Función que permite hacer una línea.
     "Draw line from start to end."
     up()
     goto(start.x, start.y)
     down()
     goto(end.x, end.y)
 
-# Función que permite hacer un cuadrado.
-def square(start, end):
+def square(start, end):  # Función que permite hacer un cuadrado.
     "Draw square from start to end."
     up()
     goto(start.x, start.y)
@@ -21,11 +19,9 @@ def square(start, end):
     for count in range(4):
         forward(end.x - start.x)
         left(90)
-
     end_fill()
 
-# Función que permite hacer el círculo.
-def circle(start, end):
+def circle(start, end):  # Función que permite hacer el círculo.
     "Draw circle from start to end."
     up()
     goto(start.x, start.y)
@@ -35,11 +31,9 @@ def circle(start, end):
     for count in range(360):
         forward(math.sin(math.radians(1))*(math.sqrt((end.x - start.x)**2+(end.y - start.y)**2)))
         left(1)
-
     end_fill()
 
-# Función que permite hacer el rectángulo.
-def rectangle(start, end):
+def rectangle(start, end):  # Función que permite hacer el rectángulo.
     "Draw rectangle from start to end."
     up()
     goto(start.x, start.y)
@@ -51,11 +45,9 @@ def rectangle(start, end):
         left(90)
         forward(end.y - start.y)
         left(90)
-
     end_fill()
 
-# Función que permite hacer el triángulo.
-def triangle(start, end):
+def triangle(start, end):  # Función que permite hacer el triángulo.
     "Draw triangle from start to end."
     up()
     goto(start.x, start.y)
@@ -65,10 +57,9 @@ def triangle(start, end):
     for count in range(3):
         forward(end.x - start.x)
         left(120)
-
     end_fill()
     
-def tap(x, y):
+def tap(x, y):  # Función que almacena el punto de partida y dibuja la forma.
     "Store starting point or draw shape."
     start = state['start']
 
@@ -80,10 +71,11 @@ def tap(x, y):
         shape(start, end)
         state['start'] = None
 
-def store(key, value):
+def store(key, value):  #Función que almacena el valor en estado de clave.
     "Store value in state at key."
     state[key] = value
 
+# Parámetros que llaman a hacer las funciones anteriores.
 state = {'start': None, 'shape': line}
 setup(420, 420, 370, 0)
 onscreenclick(tap)
